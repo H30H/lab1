@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/cc++ labs/lab1_new/complexNum.h
+stdlib.h
+C:/cc++ labs/lab1_new/stdlib.h
+string.h
+C:/cc++ labs/lab1_new/string.h
+stdio.h
+C:/cc++ labs/lab1_new/stdio.h
+
+C:/cc++ labs/lab1_new/menu.c
+menu.h
+C:/cc++ labs/lab1_new/menu.h
+
+C:/cc++ labs/lab1_new/menu.h
+myVector.h
+C:/cc++ labs/lab1_new/myVector.h
+
+C:/cc++ labs/lab1_new/myVector.h
+stdMath.h
+C:/cc++ labs/lab1_new/stdMath.h
+
+C:/cc++ labs/lab1_new/stdMath.h
+complexNum.h
+C:/cc++ labs/lab1_new/complexNum.h
+stdio.h
+C:/cc++ labs/lab1_new/stdio.h
+
