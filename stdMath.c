@@ -9,18 +9,27 @@
 #define ImplementateStdMath(TYPE) \
                                     \
 void* TYPE##Add(void *num1, void *num2, void *res) { \
-    *((TYPE*)res) = *((TYPE*)num1) + *((TYPE*)num2); \
+    TYPE *t = malloc(sizeof(TYPE)); \
+    *t = *((TYPE*)num1) + *((TYPE*)num2); \
+    memcpy(res, t, sizeof(TYPE)); \
+    free(t);                      \
     return res;                     \
 }                                   \
                                     \
 void* TYPE##Sub(void *num1, void *num2, void *res) { \
-    *((TYPE*)res) = *((TYPE*)num1) - *((TYPE*)num2);\
-    return res;                     \
+    TYPE *t = malloc(sizeof(TYPE)); \
+    *t = *((TYPE*)num1) - *((TYPE*)num2); \
+    memcpy(res, t, sizeof(TYPE)); \
+    free(t);                      \
+    return res;                    \
 }                                   \
                                     \
 void* TYPE##Mult(void *num1, void *num2, void *res) {\
-    *((TYPE*)res) = *((TYPE*)num1) * *((TYPE*)num2);\
-    return res;                     \
+    TYPE *t = malloc(sizeof(TYPE)); \
+    *t = *((TYPE*)num1) * *((TYPE*)num2); \
+    memcpy(res, t, sizeof(TYPE)); \
+    free(t);                      \
+    return res;                    \
 }                                   \
 
 
@@ -48,10 +57,10 @@ void doublePrint(void *num) {
                                  \
 const struct operation TYPE##Operation = { \
     STR(TYPE),                     \
-    &TYPE##Add,                     \
-    &TYPE##Sub,                     \
-    &TYPE##Mult,                    \
-    &TYPE##Print                    \
+    TYPE##Add,                     \
+    TYPE##Sub,                     \
+    TYPE##Mult,                    \
+    TYPE##Print                    \
 };                             \
 
 

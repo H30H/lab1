@@ -38,7 +38,7 @@ myVector *vectorAdd(myVector *v1, myVector *v2) {
 myVector *vectorScalarMult(myVector *v1, myVector *v2) {
     if (v1->element_size != v2->element_size || v1->type != v2->type) return NULL;
 
-    void *x, *y, *z;
+    void *x = malloc(sizeof(v1->element_size)), *y = malloc(sizeof(v1->element_size)), *z = malloc(sizeof(v1->element_size));
     v1->operation->mult(v1->x, v2->x, x);
     v1->operation->mult(v1->y, v2->y, y);
     v1->operation->mult(v1->z, v2->z, z);
@@ -49,16 +49,14 @@ myVector *vectorScalarMult(myVector *v1, myVector *v2) {
 myVector *vectorMult(myVector *v1, myVector *v2) {
     if (v1->element_size != v2->element_size || v1->type != v2->type) return NULL;
 
-    void *x, *y, *z, *k1, *k2;
+    void *x = malloc(sizeof(v1->element_size)), *y = malloc(sizeof(v1->element_size)), *z = malloc(sizeof(v1->element_size)),
+         *k1 = malloc(sizeof(v1->element_size)), *k2 = malloc(sizeof(v1->element_size));
     struct operation *op = v1->operation;
     op->sub(op->mult(v1->y, v2->z, k1), op->mult(v1->z, v2->y, k2), x);
-    free(k1); free(k2);
 
     op->sub(op->mult(v1->z, v2->x, k1), op->mult(v1->x, v2->z, k2), y);
-    free(k1); free(k2);
 
     op->sub(op->mult(v1->x, v2->y, k1), op->mult(v1->y, v2->x, k2), z);
-    free(k1); free(k2);
 
     return newVector(x, y, z, v1->element_size, v1->type, op);
 }

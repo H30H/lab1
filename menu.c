@@ -325,10 +325,13 @@ void operationWithVector(myVector **arr, int len, myVector **res) {
     printf("Введите код операции: 1 - сумма векторов, 2 - скалярное произведение векторов, 3 - векторное произведение векторов: ");
     int n = getInt(NULL, 1, 3);
 
+    if (*res != NULL) (*res)->remove;
+    //printf("%d %d %d", *(int*)(v1->x), *(int*)(v1->y), *(int*)(v1->z));
+
     switch (n) {
         default: break;
-        case 1: *res = v1->add(v1, v2);
-        case 2: *res = v1->scalarMult(v1, v2);
-        case 3: *res = v1->mult(v1, v2);
+        case 1: *res = v1->add(v1, v2); break;
+        case 2: *res = v1->scalarMult(v1, v2); break;
+        case 3: *res = v1->mult(v1, v2); break;
     }
 }
