@@ -6,15 +6,33 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/cc++ labs/lab1_new/complexNum.c
-complexNum.h
-/cygdrive/c/cc++ labs/lab1_new/complexNum.h
-
 /cygdrive/c/cc++ labs/lab1_new/complexNum.h
 stdlib.h
 /cygdrive/c/cc++ labs/lab1_new/stdlib.h
 string.h
 /cygdrive/c/cc++ labs/lab1_new/string.h
+stdio.h
+/cygdrive/c/cc++ labs/lab1_new/stdio.h
+
+/cygdrive/c/cc++ labs/lab1_new/main.c
+stdio.h
+-
+menu.h
+/cygdrive/c/cc++ labs/lab1_new/menu.h
+
+/cygdrive/c/cc++ labs/lab1_new/menu.h
+myVector.h
+/cygdrive/c/cc++ labs/lab1_new/myVector.h
+
+/cygdrive/c/cc++ labs/lab1_new/myVector.h
+stdMath.h
+/cygdrive/c/cc++ labs/lab1_new/stdMath.h
+stdlib.h
+/cygdrive/c/cc++ labs/lab1_new/stdlib.h
+
+/cygdrive/c/cc++ labs/lab1_new/stdMath.h
+complexNum.h
+/cygdrive/c/cc++ labs/lab1_new/complexNum.h
 stdio.h
 /cygdrive/c/cc++ labs/lab1_new/stdio.h
 

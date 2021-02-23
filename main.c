@@ -53,8 +53,8 @@ void test() {
 
 
 int main() {
-    system("chcp 65001");
-    test();
+    //system("chcp 65001");
+    //test();
     double xx = 1, yy = 2, zz = 3;
     int err, n, len = 0;
     myVector *v = NULL;
