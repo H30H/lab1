@@ -1,3 +1,1 @@
-"D:\Zakachka\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\lab1_new.dir/objects.a
-C:\PROGRA~2\MINGW-~1\I686-7~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\lab1_new.dir/objects.a @CMakeFiles\lab1_new.dir\objects1.rsp
-C:\PROGRA~2\MINGW-~1\I686-7~1.0-P\mingw32\bin\gcc.exe -g   -Wl,--whole-archive CMakeFiles\lab1_new.dir/objects.a -Wl,--no-whole-archive  -o lab1_new.exe -Wl,--out-implib,liblab1_new.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\lab1_new.dir\linklibs.rsp
+/usr/bin/cc -g  -Wl,--enable-auto-import CMakeFiles/lab1_new.dir/main.c.o CMakeFiles/lab1_new.dir/complexNum.c.o CMakeFiles/lab1_new.dir/stdMath.c.o CMakeFiles/lab1_new.dir/myVector.c.o CMakeFiles/lab1_new.dir/menu.c.o  -o lab1_new.exe -Wl,--out-implib,liblab1_new.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

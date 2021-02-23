@@ -121,20 +121,24 @@ myVector *createComplexVector() {
     complex *z = getComplex();
     myVector *res = newVector(malloc(sizeof(complex)), malloc(sizeof(complex)),
                               malloc(sizeof(complex)), sizeof(complex), typeComplex, &complexOperation);
-    memcpy(res->x, &x, sizeof(complex));
-    memcpy(res->y, &y, sizeof(complex));
-    memcpy(res->z, &z, sizeof(complex));
+    memcpy(res->x, x, sizeof(complex));
+    memcpy(res->y, y, sizeof(complex));
+    memcpy(res->z, z, sizeof(complex));
+
+    free(x);
+    free(y);
+    free(z);
+
     return res;
 }
 
 myVector *getVector() {
     int n;
-    struct operation *op;
     printf("Введите следующее число для выбора типа вектора:\n "
            "\t1: вектор int \n"
            "\t2: вектор float\n"
            "\t3: вектор double\n"
-           "\t4: вектор complex\n::");
+           "\t4: вектор complex\n:");
     getInt(&n, 1, 4);
     myVector *res;
     switch (n) {
@@ -142,6 +146,7 @@ myVector *getVector() {
         case 2: res = createFloatVector(); break;
         case 3: res = createDoubleVector(); break;
         case 4: res = createComplexVector(); break;
+        default: res = NULL; break;
     }
     return res;
 }
@@ -173,7 +178,7 @@ void addToArray(myVector ***arr, int *len, int ind, myVector **vec) {
             j++;
         }
     }
-    free(arr);
+    free(*arr);
     *arr = arrNew;
     *vec = NULL;
 }
@@ -325,7 +330,7 @@ void operationWithVector(myVector **arr, int len, myVector **res) {
     printf("Введите код операции: 1 - сумма векторов, 2 - скалярное произведение векторов, 3 - векторное произведение векторов: ");
     int n = getInt(NULL, 1, 3);
 
-    if (*res != NULL) (*res)->remove;
+    if (*res != NULL) (*res)->remove(*res);
     //printf("%d %d %d", *(int*)(v1->x), *(int*)(v1->y), *(int*)(v1->z));
 
     switch (n) {

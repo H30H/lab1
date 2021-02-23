@@ -8,6 +8,7 @@
 #endif //LAB1_NEW_MYVECTOR_H
 
 #include "stdMath.h"
+#include "stdlib.h"
 
 #define typeInt     0
 #define typeFloat   1

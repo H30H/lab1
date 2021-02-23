@@ -1,8 +1,8 @@
-# Install script for directory: C:/cc++ labs/lab1_new
+# Install script for directory: /cygdrive/c/cc++ labs/lab1_new
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/lab1_new")
+  set(CMAKE_INSTALL_PREFIX "/usr/local")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/cc++ labs/lab1_new/cmake-build-debug-coverage/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/cygdrive/c/cc++ labs/lab1_new/cmake-build-debug-coverage/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

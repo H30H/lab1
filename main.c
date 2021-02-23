@@ -2,19 +2,59 @@
 
 #include "menu.h"
 
+void test1() {
+    complex *c1 = newComplex(1, 2);
+    complex *c2 = newComplex(3, 4);
+    complex *c3 = malloc(sizeof(complex));
+    complexAdd(c1, c2, c3);
+
+    complexPrint(c1); printf("\n");
+    complexPrint(c2); printf("\n");
+    complexPrint(c3); printf("\n\n");
+
+    complexSub(c1, c2, c3);
+
+    complexPrint(c1); printf("\n");
+    complexPrint(c2); printf("\n");
+    complexPrint(c3); printf("\n\n");
+
+    complexMult(c1, c2, c3);
+
+    complexPrint(c1); printf("\n");
+    complexPrint(c2); printf("\n");
+    complexPrint(c3); printf("\n");
+
+    exit(0);
+}
+
 void test() {
+    //test1();
     myVector *v1 = getVector();
     myVector *v2 = getVector();
 
-    myVector *v3 = v1->add(v1, v2);
+    v1->print(v1);
+    v2->print(v2);
+    printf("El size: %d\n", v1->element_size);
+    myVector *v3 = v2->add(v1, v2);
+    printf("Сумма: ");
     v3->print(v3);
+    v3->remove(v3);
+    printf("\nСкалярное произведение: ");
+    v3 = v1->scalarMult(v1, v2);
+    v3->print(v3);
+    v3->remove(v3);
+    printf("\nВекторное произведение: ");
+    v3 = v1->mult(v1, v2);
+    v3->print(v3);
+    int i;
+    scanf("%d", &i);
     exit(0);
 }
 
 
 int main() {
     system("chcp 65001");
-    //test();
+    test();
     double xx = 1, yy = 2, zz = 3;
     int err, n, len = 0;
     myVector *v = NULL;
