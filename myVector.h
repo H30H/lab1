@@ -25,7 +25,7 @@ typedef struct myVector {
     unsigned int type;
 
     struct myVector* (*add) (struct myVector *v1, struct myVector *v2);
-    struct myVector* (*scalarMult) (struct myVector *v1, struct myVector *v2);
+    void* (*scalarMult) (struct myVector *v1, struct myVector *v2);
     struct myVector* (*mult) (struct myVector *v1, struct myVector *v2);
 
     void (*print)(struct myVector *v);
@@ -35,7 +35,7 @@ typedef struct myVector {
 myVector *newVector(void *x, void *y, void *z, size_t element_size, unsigned int type, const struct operation *op);
 
 myVector *vectorAdd(myVector *v1, myVector *v2);
-myVector *vectorScalarMult(myVector *v1, myVector *v2);
+void *vectorScalarMult(myVector *v1, myVector *v2);
 myVector *vectorMult(myVector *v1, myVector *v2);
 
 void printVector(myVector *v);

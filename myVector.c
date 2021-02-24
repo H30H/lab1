@@ -41,7 +41,7 @@ myVector *vectorAdd(myVector *v1, myVector *v2) {
     return newVector(x, y, z, v1->element_size, v1->type, v1->operation);
 }
 
-myVector *vectorScalarMult(myVector *v1, myVector *v2) {
+void *vectorScalarMult(myVector *v1, myVector *v2) {
     if (v1->element_size != v2->element_size || v1->type != v2->type) return NULL;
 
     void *x = malloc(sizeof(v1->element_size)), *y = malloc(sizeof(v1->element_size)), *z = malloc(sizeof(v1->element_size));
@@ -49,7 +49,11 @@ myVector *vectorScalarMult(myVector *v1, myVector *v2) {
     v1->operation->mult(v1->y, v2->y, y);
     v1->operation->mult(v1->z, v2->z, z);
 
-    return newVector(x, y, z, v1->element_size, v1->type, v1->operation);
+    void *sum = malloc(sizeof(v1->element_size));
+    v1->operation->add(x, y, sum);
+    v1->operation->add(sum, z, sum);
+
+    return sum;
 }
 
 myVector *vectorMult(myVector *v1, myVector *v2) {

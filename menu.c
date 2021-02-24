@@ -332,11 +332,16 @@ void operationWithVector(myVector **arr, int len, myVector **res) {
 
     if (*res != NULL) (*res)->remove(*res);
     //printf("%d %d %d", *(int*)(v1->x), *(int*)(v1->y), *(int*)(v1->z));
-
+    void *scalar;
     switch (n) {
         default: break;
         case 1: *res = v1->add(v1, v2); break;
-        case 2: *res = v1->scalarMult(v1, v2); break;
+        case 2: scalar = v1->scalarMult(v1, v2); break;
         case 3: *res = v1->mult(v1, v2); break;
     }
+    if (n != 2) return;
+
+    printf("Результат скалярного умножения: тип: %s, значение: ", v1->operation->type);
+    v1->operation->print(scalar);
+    printf("\n");
 }
