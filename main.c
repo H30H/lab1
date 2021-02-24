@@ -55,7 +55,6 @@ void test() {
 int main() {
     //system("chcp 65001");
     //test();
-    double xx = 1, yy = 2, zz = 3;
     int err, n, len = 0;
     myVector *v = NULL;
     myVector **arr = (myVector **) malloc(sizeof(myVector *));
@@ -84,16 +83,6 @@ int main() {
     }
     free(arr);
     if (v != NULL) v->remove(v);
-    /*
-    complex k1 = {1.0, 2.0, 0},
-            k2 = {3.0, 4.0, 0},
-            *k3;
-    //int *a = (int*) malloc(sizeof(int));
-    //int b = 0, c = 1;
-    int a;
-    int err = scanf("%d", &a);
-    printf("%d %d\n", err, a);
-    err = scanf("%d", &a);
-    printf("%d %d\n", err, a);*/
+
     return 0;
 }
