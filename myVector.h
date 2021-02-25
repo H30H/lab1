@@ -10,11 +10,6 @@
 #include "stdMath.h"
 #include "stdlib.h"
 
-#define typeInt     0
-#define typeFloat   1
-#define typeDouble  2
-#define typeComplex 3
-
 typedef struct myVector {
     struct operation* operation;
 

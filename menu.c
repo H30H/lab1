@@ -74,7 +74,7 @@ myVector *createIntVector() {
     printf("Введите координату z: ");
     int z = getInt(NULL, 0, 0);
     myVector *res = newVector(malloc(sizeof(int)), malloc(sizeof(int)),
-                              malloc(sizeof(int)), sizeof(int), typeInt, &intOperation);
+                              malloc(sizeof(int)), sizeof(int), &intOperation);
     memcpy(res->x, &x, sizeof(int));
     memcpy(res->y, &y, sizeof(int));
     memcpy(res->z, &z, sizeof(int));
@@ -89,7 +89,7 @@ myVector *createFloatVector() {
     printf("Введите координату z: ");
     float z = getFloat(NULL, 0, 0);
     myVector *res = newVector(malloc(sizeof(float)), malloc(sizeof(float)),
-                              malloc(sizeof(float)), sizeof(float), typeFloat, &floatOperation);
+                              malloc(sizeof(float)), sizeof(float), &floatOperation);
     memcpy(res->x, &x, sizeof(float));
     memcpy(res->y, &y, sizeof(float));
     memcpy(res->z, &z, sizeof(float));
@@ -105,7 +105,7 @@ myVector *createDoubleVector() {
     double z = getDouble(NULL, 0, 0);
     printf("Double: %lf, %lf, %lf\n", x, y, z);
     myVector *res = newVector(malloc(sizeof(double)), malloc(sizeof(double)),
-                              malloc(sizeof(double)), sizeof(double), typeDouble, &doubleOperation);
+                              malloc(sizeof(double)), sizeof(double), &doubleOperation);
     memcpy(res->x, &x, sizeof(double));
     memcpy(res->y, &y, sizeof(double));
     memcpy(res->z, &z, sizeof(double));
@@ -120,7 +120,7 @@ myVector *createComplexVector() {
     printf("Введите координату z: ");
     complex *z = getComplex();
     myVector *res = newVector(malloc(sizeof(complex)), malloc(sizeof(complex)),
-                              malloc(sizeof(complex)), sizeof(complex), typeComplex, &complexOperation);
+                              malloc(sizeof(complex)), sizeof(complex), &complexOperation);
     memcpy(res->x, x, sizeof(complex));
     memcpy(res->y, y, sizeof(complex));
     memcpy(res->z, z, sizeof(complex));
