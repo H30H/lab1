@@ -27,6 +27,7 @@ typedef struct myVector {
 } myVector;
 
 myVector *newVector(void *x, void *y, void *z, size_t element_size, const struct operation *op);
+int checkType(struct myVector *v1, struct myVector *v2);
 
 myVector *vectorAdd(myVector *v1, myVector *v2);
 void *vectorScalarMult(myVector *v1, myVector *v2);

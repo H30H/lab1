@@ -292,10 +292,6 @@ void printArrVector(myVector ***arr, int len) {
     v->print(v);
 }
 
-int checkType(myVector *v1, myVector *v2) {
-    return (v1->operation != v2->operation);
-}
-
 void operationWithVector(myVector **arr, int len, myVector **res) {
     printf("Введите индекс первого элемента, выступающего в операции или введите -1 для выхода (%d элементов в массиве): ", len);
     int n1 = checkInd(len);
