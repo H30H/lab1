@@ -293,7 +293,7 @@ void printArrVector(myVector ***arr, int len) {
 }
 
 int checkType(myVector *v1, myVector *v2) {
-    return (v1->type != v2->type);
+    return (v1->operation != v2->operation);
 }
 
 void operationWithVector(myVector **arr, int len, myVector **res) {
@@ -341,7 +341,8 @@ void operationWithVector(myVector **arr, int len, myVector **res) {
     }
     if (n != 2) return;
 
-    printf("Результат скалярного умножения: тип: %s, значение: ", v1->operation->type);
+    printf("Результат скалярного умножения: тип: %s; значение: ", v1->operation->type);
     v1->operation->print(scalar);
+    free(scalar);
     printf("\n");
 }
