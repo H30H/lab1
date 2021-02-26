@@ -26,6 +26,7 @@ myVector *newVector(void *x, void *y, void *z, size_t element_size, const struct
 }
 
 int checkType(struct myVector *v1, struct myVector *v2) {
+    if (v1 == NULL || v2 == NULL) return 0;
     return (v1->element_size != v2->element_size || v1->operation != v2->operation);
 }
 
@@ -33,12 +34,11 @@ myVector *vectorAdd(myVector *v1, myVector *v2) {
     if (checkType(v1, v2)) return NULL;
 
     void *x = calloc(1, sizeof(v1->element_size));
-    v1->operation->add(v1->x, v2->x, x);
-
-    void *y = calloc(1, sizeof(v1->element_size));
-    v1->operation->add(v1->y, v2->y, y);
-
     void *z = calloc(1, sizeof(v1->element_size));
+    void *y = calloc(1, sizeof(v1->element_size));
+
+    v1->operation->add(v1->x, v2->x, x);
+    v1->operation->add(v1->y, v2->y, y);
     v1->operation->add(v1->z, v2->z, z);
 
     return newVector(x, y, z, v1->element_size, v1->operation);
@@ -47,7 +47,10 @@ myVector *vectorAdd(myVector *v1, myVector *v2) {
 void *vectorScalarMult(myVector *v1, myVector *v2) {
     if (checkType(v1, v2)) return NULL;
 
-    void *x = malloc(sizeof(v1->element_size)), *y = malloc(sizeof(v1->element_size)), *z = malloc(sizeof(v1->element_size));
+    void *x = malloc(sizeof(v1->element_size));
+    void *y = malloc(sizeof(v1->element_size));
+    void *z = malloc(sizeof(v1->element_size));
+
     v1->operation->mult(v1->x, v2->x, x);
     v1->operation->mult(v1->y, v2->y, y);
     v1->operation->mult(v1->z, v2->z, z);
