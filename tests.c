@@ -3,3 +3,8 @@
 //
 
 #include "tests.h"
+
+void intTest() {
+    printf("Проверка целочисленных векторов...\n");
+
+}

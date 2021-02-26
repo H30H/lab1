@@ -25,3 +25,6 @@ CMakeFiles/lab1_new.dir/stdMath.c.o: ../complexNum.h
 CMakeFiles/lab1_new.dir/stdMath.c.o: ../stdMath.c
 CMakeFiles/lab1_new.dir/stdMath.c.o: ../stdMath.h
 
+CMakeFiles/lab1_new.dir/tests.c.o: ../tests.c
+CMakeFiles/lab1_new.dir/tests.c.o: ../tests.h
+
