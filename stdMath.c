@@ -9,31 +9,22 @@
 #define ImplementateStdMath(TYPE) \
                                     \
 void* TYPE##Add(void *num1, void *num2, void *res) { \
-    TYPE *t = malloc(sizeof(TYPE)); \
-    *t = *((TYPE*)num1) + *((TYPE*)num2); \
-    memcpy(res, t, sizeof(TYPE)); \
-    free(t);                      \
+    *(TYPE*)res = *(TYPE*)num1 + *(TYPE*)num2;       \
     return res;                     \
 }                                   \
                                     \
 void* TYPE##Sub(void *num1, void *num2, void *res) { \
-    TYPE *t = malloc(sizeof(TYPE)); \
-    *t = *((TYPE*)num1) - *((TYPE*)num2); \
-    memcpy(res, t, sizeof(TYPE)); \
-    free(t);                      \
-    return res;                    \
+    *(TYPE*)res = *(TYPE*)num1 - *(TYPE*)num2;       \
+    return res;                     \
 }                                   \
                                     \
-void* TYPE##Mult(void *num1, void *num2, void *res) {\
-    TYPE *t = malloc(sizeof(TYPE)); \
-    *t = *((TYPE*)num1) * *((TYPE*)num2); \
-    memcpy(res, t, sizeof(TYPE)); \
-    free(t);                      \
-    return res;                    \
-}                                 \
-                                  \
+void* TYPE##Mult(void *num1, void *num2, void *res) { \
+    *(TYPE*)res = *(TYPE*)num1 * *(TYPE*)num2;        \
+    return res;                     \
+}                                   \
+                                    \
 int TYPE##IsSame(void *num1, void *num2) {           \
-    return (*(TYPE*)(num1) == *(TYPE*)(num2));         \
+    return (*(TYPE*)(num1) == *(TYPE*)(num2));       \
 }\
 
 

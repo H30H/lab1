@@ -18,7 +18,7 @@ int main() {
             if (err <= 0) scanf("%s");
             continue;
         }
-        if (n == 6) break;
+        if (n == 7) break;
 
         switch (n) {
             case 1: v = getVector(); break;
@@ -26,6 +26,7 @@ int main() {
             case 3: operationWithVector(arr, len, &v); break;
             case 4: printArrVector(&arr, len); break;
             case 5: removeArr(&arr, &len); break;
+            case 6: tests(); break;
             default: break;
         }
     } while (1);
