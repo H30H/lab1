@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/cc++ labs/lab1_new/complexNum.c
-complexNum.h
-/cygdrive/c/cc++ labs/lab1_new/complexNum.h
-
 /cygdrive/c/cc++ labs/lab1_new/complexNum.h
 stdlib.h
 /cygdrive/c/cc++ labs/lab1_new/stdlib.h
@@ -49,6 +45,4 @@ tests.h
 /cygdrive/c/cc++ labs/lab1_new/tests.h
 myVector.h
 /cygdrive/c/cc++ labs/lab1_new/myVector.h
-time.h
--
 

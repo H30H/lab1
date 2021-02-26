@@ -1,6 +1,7 @@
 //
 // Created by Grisha on 20.02.2021.
 //
+#pragma once
 
 #include "myVector.h"
 

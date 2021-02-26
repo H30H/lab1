@@ -6,7 +6,7 @@
 
 
 void tests() {
-    srand(time(NULL));
+    srand(0);
     intTest();
 }
 

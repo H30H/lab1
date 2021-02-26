@@ -4,7 +4,6 @@
 #pragma once
 
 #include "myVector.h"
-#include <time.h>
 
 void tests();
 
