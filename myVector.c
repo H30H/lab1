@@ -27,6 +27,9 @@ myVector *newVector(void *x, void *y, void *z, size_t element_size, const struct
 
 int checkType(struct myVector *v1, struct myVector *v2) {
     if (v1 == NULL || v2 == NULL) return 0;
+
+    if (v1->myVectorSize != sizeof(myVector) || v2->myVectorSize != sizeof(myVector)) return 0;
+
     return (v1->element_size != v2->element_size || v1->operation != v2->operation);
 }
 
@@ -75,6 +78,13 @@ myVector *vectorMult(myVector *v1, myVector *v2) {
     op->sub(op->mult(v1->x, v2->y, k1), op->mult(v1->y, v2->x, k2), z);
 
     return newVector(x, y, z, v1->element_size, op);
+}
+
+int vectorIsSame(myVector *v1, myVector *v2) {
+    if (checkType(v1, v2)) return 0;
+    return (v1->operation->isSame(v1->x, v2->x) &&
+            v1->operation->isSame(v1->y, v2->y) &&
+            v1->operation->isSame(v1->z, v2->z));
 }
 
 void printVector(myVector *v) {

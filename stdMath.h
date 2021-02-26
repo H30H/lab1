@@ -10,6 +10,7 @@ struct operation {
     void* (*add) (void *, void *, void *);
     void* (*sub) (void *, void *, void *);
     void* (*mult)(void *, void *, void *);
+    int (*isSame) (void *, void *);
     void (*print)(void *);
 };
 

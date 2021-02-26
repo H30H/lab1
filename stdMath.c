@@ -30,7 +30,11 @@ void* TYPE##Mult(void *num1, void *num2, void *res) {\
     memcpy(res, t, sizeof(TYPE)); \
     free(t);                      \
     return res;                    \
-}                                   \
+}                                 \
+                                  \
+int TYPE##IsSame(void *num1, void *num2) {           \
+    return (*(TYPE*)(num1) == *(TYPE*)(num2));         \
+}\
 
 
 ImplementateStdMath(int)
@@ -60,6 +64,7 @@ const struct operation TYPE##Operation = { \
     TYPE##Add,                     \
     TYPE##Sub,                     \
     TYPE##Mult,                    \
+    TYPE##IsSame,                  \
     TYPE##Print                    \
 };                             \
 

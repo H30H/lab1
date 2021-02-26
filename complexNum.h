@@ -19,3 +19,4 @@ void* complexAdd(void *num1, void *num2, void *res);
 void* complexSub(void *num1, void *num2, void *res);
 void* complexMult(void *num1, void *num2, void *res);
 void complexPrint(void *num);
+int complexIsSame(void *num1, void *num2);

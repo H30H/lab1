@@ -28,5 +28,7 @@ myVector *vectorAdd(myVector *v1, myVector *v2);
 void *vectorScalarMult(myVector *v1, myVector *v2);
 myVector *vectorMult(myVector *v1, myVector *v2);
 
+int vectorIsSame(myVector *v1, myVector *v2);
+
 void printVector(myVector *v);
 void removeMyVector(myVector *);

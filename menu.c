@@ -148,6 +148,9 @@ myVector *getVector() {
         case 4: res = createComplexVector(); break;
         default: res = NULL; break;
     }
+    if (n >= 1 && n <= 4 && res == NULL) {
+        printf("Не удалось создать вектор!\n");
+    }
     return res;
 }
 
@@ -335,6 +338,12 @@ void operationWithVector(myVector **arr, int len, myVector **res) {
         case 2: scalar = v1->scalarMult(v1, v2); break;
         case 3: *res = v1->mult(v1, v2); break;
     }
+
+    if (*res == NULL) {
+        printf("Произошла ошибка во время выполнения операции!\n");
+        return;
+    }
+
     if (n != 2) return;
 
     printf("Результат скалярного умножения: тип: %s; значение: ", v1->operation->type);

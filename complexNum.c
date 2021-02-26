@@ -64,3 +64,9 @@ void complexPrint(void *num) {
         else
             printf("%fi", -n->complexPart);
 }
+
+int complexIsSame(void *num1, void *num2) {
+    complex *n1 = num1;
+    complex *n2 = num2;
+    return (n1->realPart == n2->realPart && n1->complexPart == n2->complexPart);
+}
