@@ -44,7 +44,7 @@ void* complexMult(void *num1, void *num2, void *res) {
 
 void complexPrint(void *num) {
     complex *n = num;
-    if (n->realPart != 0 && n->complexPart != 0)
+    if (n->realPart != 0 && n->complexPart == 0)
         printf("%f ", n->realPart);
 
     if (n->complexPart != 0)
@@ -54,7 +54,7 @@ void complexPrint(void *num) {
             else
                 printf("- ");
         }
-        if (n->complexPart > 0)
+        if (n->complexPart > 0 || n->realPart == 0)
             printf("%fi", n->complexPart);
         else
             printf("%fi", -n->complexPart);
