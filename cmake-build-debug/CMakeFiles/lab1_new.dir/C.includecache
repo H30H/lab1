@@ -14,18 +14,6 @@ string.h
 stdio.h
 /cygdrive/c/cc++ labs/lab1_new/stdio.h
 
-/cygdrive/c/cc++ labs/lab1_new/main.c
-stdio.h
--
-menu.h
-/cygdrive/c/cc++ labs/lab1_new/menu.h
-tests.h
-/cygdrive/c/cc++ labs/lab1_new/tests.h
-
-/cygdrive/c/cc++ labs/lab1_new/menu.h
-myVector.h
-/cygdrive/c/cc++ labs/lab1_new/myVector.h
-
 /cygdrive/c/cc++ labs/lab1_new/myVector.h
 stdMath.h
 /cygdrive/c/cc++ labs/lab1_new/stdMath.h

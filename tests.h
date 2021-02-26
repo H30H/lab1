@@ -7,7 +7,7 @@
 
 void tests();
 
-void intTest();
-void floatTest();
-void doubleTest();
-void complexTest();
+void intTest(int testCount);
+void floatTest(int testCount);
+void doubleTest(int testCount);
+void complexTest(int testCount);
