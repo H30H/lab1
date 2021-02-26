@@ -10,9 +10,9 @@ void tests() {
     int testCount = 1000000;
     printf("%d\n", (int) sizeof(myVector));
     intTest(testCount);
-    //floatTest(testCount);
-    //doubleTest(testCount);
-    //complexTest(testCount);
+    floatTest(testCount);
+    doubleTest(testCount);
+    complexTest(testCount);
 }
 
 int testCheckVec(void *x, void *y, void *z, myVector *v) {
@@ -50,14 +50,14 @@ void intTest(int testCount) {
         myVector *v2 = newVector(&x2, &y2, &z2, sizeof(int), &intOperation);
         
         myVector *vAdd = v1->add(v1, v2);
-        //int *vScalar = (int*) v1->scalarMult(v1, v2);
+        int *vScalar = (int*) v1->scalarMult(v1, v2);
         myVector *vMult = v1->mult(v1, v2);
 
         x = x1 + x2, y = y1 + y2, z = z1 + z2;
         k = testCheckVec(&x, &y, &z, vAdd);
 
         x = x1 * x2, y = y1 * y2, z = z1 * z2;
-        //k = k && (*vScalar == x + y + z);
+        k = k && (*vScalar == x + y + z);
 
         x = y1 * z2 - y2 * z1, y = z1 * x2 - z2 * x1, z = x1 * y2 - x2 * y1;
         k = k && testCheckVec(&x, &y, &z, vMult);
@@ -66,9 +66,9 @@ void intTest(int testCount) {
 
         free(v1);
         free(v2);
-        free(vAdd);
-        //free(vScalar);
-        free(vMult);
+        free(vScalar);
+        vAdd->remove(vAdd);
+        vMult->remove(vMult);
     }
     printf("Проверка на %d случайных числах ", testCount);
     if (i == testCount) {
@@ -111,9 +111,9 @@ void floatTest(int testCount) {
 
         free(v1);
         free(v2);
-        free(vAdd);
         free(vScalar);
-        free(vMult);
+        vAdd->remove(vAdd);
+        vMult->remove(vMult);
     }
     printf("Проверка на %d случайных числах ", testCount);
     if (i == testCount) {
@@ -156,9 +156,9 @@ void doubleTest(int testCount) {
 
         free(v1);
         free(v2);
-        free(vAdd);
         free(vScalar);
-        free(vMult);
+        vAdd->remove(vAdd);
+        vMult->remove(vMult);
     }
     printf("Проверка на %d случайных числах ", testCount);
     if (i == testCount) {
@@ -205,9 +205,9 @@ void complexTest(int testCount) {
 
         free(v1);
         free(v2);
-        free(vAdd);
         free(vScalar);
-        free(vMult);
+        vAdd->remove(vAdd);
+        vMult->remove(vMult);
     }
     printf("Проверка на %d случайных числах ", testCount);
     if (i == testCount) {

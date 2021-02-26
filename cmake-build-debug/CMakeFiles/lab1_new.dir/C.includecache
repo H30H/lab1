@@ -14,13 +14,23 @@ string.h
 stdio.h
 /cygdrive/c/cc++ labs/lab1_new/stdio.h
 
-/cygdrive/c/cc++ labs/lab1_new/stdMath.c
+/cygdrive/c/cc++ labs/lab1_new/myVector.h
 stdMath.h
 /cygdrive/c/cc++ labs/lab1_new/stdMath.h
+stdlib.h
+/cygdrive/c/cc++ labs/lab1_new/stdlib.h
 
 /cygdrive/c/cc++ labs/lab1_new/stdMath.h
 complexNum.h
 /cygdrive/c/cc++ labs/lab1_new/complexNum.h
 stdio.h
 /cygdrive/c/cc++ labs/lab1_new/stdio.h
+
+/cygdrive/c/cc++ labs/lab1_new/tests.c
+tests.h
+/cygdrive/c/cc++ labs/lab1_new/tests.h
+
+/cygdrive/c/cc++ labs/lab1_new/tests.h
+myVector.h
+/cygdrive/c/cc++ labs/lab1_new/myVector.h
 

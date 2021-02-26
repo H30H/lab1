@@ -60,9 +60,16 @@ void *vectorScalarMult(myVector *v1, myVector *v2) {
     v1->operation->mult(v1->y, v2->y, y);
     v1->operation->mult(v1->z, v2->z, z);
 
-    void *sum = malloc(sizeof(v1->element_size));
-    v1->operation->add(x, y, sum);
-    v1->operation->add(sum, z, sum);
+    void *sum1 = malloc(sizeof(v1->element_size));
+    void *sum  = malloc(sizeof(v1->element_size));
+
+    v1->operation->add(x, y, sum1);
+    v1->operation->add(sum1, z, sum);
+
+    free(x);
+    free(y);
+    free(z);
+    free(sum1);
 
     return sum;
 }
@@ -78,7 +85,8 @@ myVector *vectorMult(myVector *v1, myVector *v2) {
     op->sub(op->mult(v1->z, v2->x, k1), op->mult(v1->x, v2->z, k2), y);
 
     op->sub(op->mult(v1->x, v2->y, k1), op->mult(v1->y, v2->x, k2), z);
-
+    free(k1);
+    free(k2);
     return newVector(x, y, z, v1->element_size, op);
 }
 
