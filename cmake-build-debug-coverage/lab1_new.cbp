@@ -101,6 +101,12 @@
 		<Unit filename="/cygdrive/c/cc++ labs/lab1_new/stdMath.h">
 			<Option target="lab1_new"/>
 		</Unit>
+		<Unit filename="/cygdrive/c/cc++ labs/lab1_new/tests.c">
+			<Option target="lab1_new"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/cc++ labs/lab1_new/tests.h">
+			<Option target="lab1_new"/>
+		</Unit>
 		<Unit filename="/cygdrive/c/cc++ labs/lab1_new/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

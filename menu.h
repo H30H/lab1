@@ -2,11 +2,6 @@
 // Created by Grisha on 20.02.2021.
 //
 
-#ifndef LAB1_NEW_MENU_H
-#define LAB1_NEW_MENU_H
-
-#endif //LAB1_NEW_MENU_H
-
 #include "myVector.h"
 
 myVector *getVector();

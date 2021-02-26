@@ -278,6 +278,33 @@ stdMath.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_new.dir/build.make CMakeFiles/lab1_new.dir/stdMath.c.s
 .PHONY : stdMath.c.s
 
+tests.o: tests.c.o
+
+.PHONY : tests.o
+
+# target to build an object file
+tests.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_new.dir/build.make CMakeFiles/lab1_new.dir/tests.c.o
+.PHONY : tests.c.o
+
+tests.i: tests.c.i
+
+.PHONY : tests.i
+
+# target to preprocess a source file
+tests.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_new.dir/build.make CMakeFiles/lab1_new.dir/tests.c.i
+.PHONY : tests.c.i
+
+tests.s: tests.c.s
+
+.PHONY : tests.s
+
+# target to generate assembly for a file
+tests.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_new.dir/build.make CMakeFiles/lab1_new.dir/tests.c.s
+.PHONY : tests.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -302,6 +329,9 @@ help:
 	@echo "... stdMath.o"
 	@echo "... stdMath.i"
 	@echo "... stdMath.s"
+	@echo "... tests.o"
+	@echo "... tests.i"
+	@echo "... tests.s"
 .PHONY : help
 
 

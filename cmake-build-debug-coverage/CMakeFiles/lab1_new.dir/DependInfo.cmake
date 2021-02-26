@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/cygdrive/c/cc++ labs/lab1_new/menu.c" "/cygdrive/c/cc++ labs/lab1_new/cmake-build-debug-coverage/CMakeFiles/lab1_new.dir/menu.c.o"
   "/cygdrive/c/cc++ labs/lab1_new/myVector.c" "/cygdrive/c/cc++ labs/lab1_new/cmake-build-debug-coverage/CMakeFiles/lab1_new.dir/myVector.c.o"
   "/cygdrive/c/cc++ labs/lab1_new/stdMath.c" "/cygdrive/c/cc++ labs/lab1_new/cmake-build-debug-coverage/CMakeFiles/lab1_new.dir/stdMath.c.o"
+  "/cygdrive/c/cc++ labs/lab1_new/tests.c" "/cygdrive/c/cc++ labs/lab1_new/cmake-build-debug-coverage/CMakeFiles/lab1_new.dir/tests.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

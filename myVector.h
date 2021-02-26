@@ -2,11 +2,6 @@
 // Created by Grisha on 19.02.2021.
 //
 
-#ifndef LAB1_NEW_MYVECTOR_H
-#define LAB1_NEW_MYVECTOR_H
-
-#endif //LAB1_NEW_MYVECTOR_H
-
 #include "stdMath.h"
 #include "stdlib.h"
 

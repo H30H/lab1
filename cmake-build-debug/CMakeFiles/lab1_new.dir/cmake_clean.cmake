@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/lab1_new.dir/menu.c.o"
   "CMakeFiles/lab1_new.dir/myVector.c.o"
   "CMakeFiles/lab1_new.dir/stdMath.c.o"
+  "CMakeFiles/lab1_new.dir/tests.c.o"
   "lab1_new.exe"
   "lab1_new.pdb"
   "liblab1_new.dll.a"
