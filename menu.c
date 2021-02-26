@@ -7,6 +7,7 @@
 int getInt(int *n, int down, int up) {
     int k = (down == 0 && up == 0) ? 0 : 1;
     int err, num;
+
     do {
         err = scanf("%d", &num);
         if (err < 0) {
@@ -17,7 +18,10 @@ int getInt(int *n, int down, int up) {
             printf("Неворно! Повторите попытку!\n::");
         }
     } while (err <= 0);
-    if (n != NULL) *n = num;
+
+    if (n != NULL)
+        *n = num;
+
     return num;
 }
 
@@ -25,6 +29,7 @@ double getDouble(double *n, double down, double up) {
     int k = (down == 0 && up == 0) ? 0 : 1;
     int err;
     double num;
+
     do {
         err = scanf("%lf", &num);
         if (err < 0) {
@@ -35,7 +40,10 @@ double getDouble(double *n, double down, double up) {
             printf("Неворно! Повторите попытку!\n::");
         }
     } while (err <= 0);
-    if (n != NULL) *n = num;
+
+    if (n != NULL)
+        *n = num;
+
     return num;
 }
 
@@ -43,6 +51,7 @@ float getFloat(float *n, float down, float up) {
     int k = (down == 0 && up == 0) ? 0 : 1;
     int err;
     float num;
+
     do {
         err = scanf("%f", &num);
         if (err < 0) {
@@ -53,7 +62,10 @@ float getFloat(float *n, float down, float up) {
             printf("Неворно! Повторите попытку!\n::");
         }
     } while (err <= 0);
-    if (n != NULL) *n = num;
+
+    if (n != NULL)
+        *n = num;
+
     return num;
 }
 
@@ -73,11 +85,14 @@ myVector *createIntVector() {
     int y = getInt(NULL, 0, 0);
     printf("Введите координату z: ");
     int z = getInt(NULL, 0, 0);
+
     myVector *res = newVector(malloc(sizeof(int)), malloc(sizeof(int)),
                               malloc(sizeof(int)), sizeof(int), &intOperation);
+
     memcpy(res->x, &x, sizeof(int));
     memcpy(res->y, &y, sizeof(int));
     memcpy(res->z, &z, sizeof(int));
+
     return res;
 }
 
@@ -88,11 +103,14 @@ myVector *createFloatVector() {
     float y = getFloat(NULL, 0, 0);
     printf("Введите координату z: ");
     float z = getFloat(NULL, 0, 0);
+
     myVector *res = newVector(malloc(sizeof(float)), malloc(sizeof(float)),
                               malloc(sizeof(float)), sizeof(float), &floatOperation);
+
     memcpy(res->x, &x, sizeof(float));
     memcpy(res->y, &y, sizeof(float));
     memcpy(res->z, &z, sizeof(float));
+
     return res;
 }
 
@@ -104,11 +122,14 @@ myVector *createDoubleVector() {
     printf("Введите координату z: ");
     double z = getDouble(NULL, 0, 0);
     printf("Double: %lf, %lf, %lf\n", x, y, z);
+
     myVector *res = newVector(malloc(sizeof(double)), malloc(sizeof(double)),
                               malloc(sizeof(double)), sizeof(double), &doubleOperation);
+
     memcpy(res->x, &x, sizeof(double));
     memcpy(res->y, &y, sizeof(double));
     memcpy(res->z, &z, sizeof(double));
+
     return res;
 }
 
@@ -119,8 +140,10 @@ myVector *createComplexVector() {
     complex *y = getComplex();
     printf("Введите координату z: ");
     complex *z = getComplex();
+
     myVector *res = newVector(malloc(sizeof(complex)), malloc(sizeof(complex)),
                               malloc(sizeof(complex)), sizeof(complex), &complexOperation);
+
     memcpy(res->x, x, sizeof(complex));
     memcpy(res->y, y, sizeof(complex));
     memcpy(res->z, z, sizeof(complex));
@@ -139,8 +162,10 @@ myVector *getVector() {
            "\t2: вектор float\n"
            "\t3: вектор double\n"
            "\t4: вектор complex\n:");
+
     getInt(&n, 1, 4);
     myVector *res;
+
     switch (n) {
         case 1: res = createIntVector(); break;
         case 2: res = createFloatVector(); break;
@@ -148,9 +173,11 @@ myVector *getVector() {
         case 4: res = createComplexVector(); break;
         default: res = NULL; break;
     }
+
     if (n >= 1 && n <= 4 && res == NULL) {
         printf("Не удалось создать вектор!\n");
     }
+
     return res;
 }
 
@@ -174,6 +201,7 @@ void addToArray(myVector ***arr, int *len, int ind, myVector **vec) {
         *vec = NULL;
         return;
     }
+
     myVector **arrNew = (myVector**) malloc((*len) * sizeof(myVector *));
     for (int i = 0, j = 0; i < *len; i++) {
         if (i == ind || (i == j && i == *len - 1)) arrNew[i] = *vec;
@@ -182,6 +210,7 @@ void addToArray(myVector ***arr, int *len, int ind, myVector **vec) {
             j++;
         }
     }
+
     free(*arr);
     *arr = arrNew;
     *vec = NULL;
@@ -195,12 +224,14 @@ void replaceInArray(myVector ***arr, int *len, int ind, myVector **vec) {
 
 int checkInd(int len) {
     int n = -2;
+
     do {
         getInt(&n, 0, 0);
         if (n < 0) {
             printf("Индекс не может быть отрицательным! Повторите попытку или введите -1 для выхода: ");
         }
     } while (n < -1);
+
     return n;
 }
 
@@ -209,6 +240,7 @@ void writeVector(myVector ***arr, int *len, myVector **vec) {
         printf("Пустой вектор!\n");
         return;
     }
+
     printf("Введите индекс, по которому записать вектор в массив или введите -1 для выхода (%d элементов в массиве): ", *len);
     int n = checkInd(*len);
     if (n == -1) return;
@@ -220,6 +252,7 @@ void writeVector(myVector ***arr, int *len, myVector **vec) {
         }
         printf("Индекс превышает колличество элементов в массиве. Записать его в конец массива? (1 - да, 0 - выбор другого индекса, -1 - выход");
         getInt(&n, -1, 1);
+
         switch (n) {
             default: break;
             case 0: writeVector(arr, len, vec); break;

@@ -35,7 +35,8 @@ int main() {
         arr[i]->remove(arr[i]);
     }
     free(arr);
-    if (v != NULL) v->remove(v);
+    if (v != NULL)
+        v->remove(v);
 
     return 0;
 }
