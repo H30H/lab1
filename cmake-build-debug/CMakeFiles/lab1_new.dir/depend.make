@@ -9,6 +9,7 @@ CMakeFiles/lab1_new.dir/main.c.o: ../main.c
 CMakeFiles/lab1_new.dir/main.c.o: ../menu.h
 CMakeFiles/lab1_new.dir/main.c.o: ../myVector.h
 CMakeFiles/lab1_new.dir/main.c.o: ../stdMath.h
+CMakeFiles/lab1_new.dir/main.c.o: ../tests.h
 
 CMakeFiles/lab1_new.dir/menu.c.o: ../complexNum.h
 CMakeFiles/lab1_new.dir/menu.c.o: ../menu.c
@@ -25,6 +26,9 @@ CMakeFiles/lab1_new.dir/stdMath.c.o: ../complexNum.h
 CMakeFiles/lab1_new.dir/stdMath.c.o: ../stdMath.c
 CMakeFiles/lab1_new.dir/stdMath.c.o: ../stdMath.h
 
+CMakeFiles/lab1_new.dir/tests.c.o: ../complexNum.h
+CMakeFiles/lab1_new.dir/tests.c.o: ../myVector.h
+CMakeFiles/lab1_new.dir/tests.c.o: ../stdMath.h
 CMakeFiles/lab1_new.dir/tests.c.o: ../tests.c
 CMakeFiles/lab1_new.dir/tests.c.o: ../tests.h
 

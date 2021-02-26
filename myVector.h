@@ -1,6 +1,7 @@
 //
 // Created by Grisha on 19.02.2021.
 //
+#pragma once
 
 #include "stdMath.h"
 #include "stdlib.h"

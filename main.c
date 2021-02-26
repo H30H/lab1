@@ -1,8 +1,11 @@
 #include <stdio.h>
 
 #include "menu.h"
+#include "tests.h"
 
 int main() {
+    tests();
+    return 0;
     //system("chcp 65001");
     //test();
     int err, n, len = 0;
