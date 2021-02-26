@@ -19,6 +19,8 @@ myVector *newVector(void *x, void *y, void *z, size_t element_size, const struct
     res->scalarMult = vectorScalarMult;
     res->mult = vectorMult;
 
+    res->isSame = vectorIsSame;
+
     res->print = printVector;
     res->remove = removeMyVector;
 

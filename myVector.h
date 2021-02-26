@@ -17,6 +17,8 @@ typedef struct myVector {
     void* (*scalarMult) (struct myVector *v1, struct myVector *v2);
     struct myVector* (*mult) (struct myVector *v1, struct myVector *v2);
 
+    int (*isSame) (struct myVector *v1,  struct myVector *v2);
+
     void (*print)(struct myVector *v);
     void (*remove)(struct myVector *v);
 } myVector;
