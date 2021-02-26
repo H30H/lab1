@@ -7,7 +7,7 @@
 
 void tests() {
     srand(0);
-    int testCount = 1000000;
+    int testCount = 10000000;
     printf("%d\n", (int) sizeof(myVector));
     intTest(testCount);
     floatTest(testCount);
