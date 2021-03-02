@@ -13,7 +13,7 @@ int main() {
     do {
         printMenu();
         err = scanf("%d", &n);
-        if (err <= 0 || n > 6 || n < 1) {
+        if (err <= 0 || n > 7 || n < 1) {
             printf("Неправильно введено число, повторите попытку: ");
             if (err <= 0) scanf("%s");
             continue;

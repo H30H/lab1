@@ -28,9 +28,9 @@ myVector *newVector(void *x, void *y, void *z, size_t element_size, const struct
 }
 
 int checkType(struct myVector *v1, struct myVector *v2) {
-    if (v1 == NULL || v2 == NULL) return 0;
+    if (v1 == NULL || v2 == NULL) return 1;
 
-    if (v1->myVectorSize != sizeof(myVector) || v2->myVectorSize != sizeof(myVector)) return 0;
+    if (v1->myVectorSize != sizeof(myVector) || v2->myVectorSize != sizeof(myVector)) return 1;
 
     return (v1->element_size != v2->element_size || v1->operation != v2->operation);
 }
@@ -38,9 +38,9 @@ int checkType(struct myVector *v1, struct myVector *v2) {
 myVector *vectorAdd(myVector *v1, myVector *v2) {
     if (checkType(v1, v2)) return NULL;
 
-    void *x = calloc(1, sizeof(v1->element_size));
-    void *z = calloc(1, sizeof(v1->element_size));
-    void *y = calloc(1, sizeof(v1->element_size));
+    void *x = malloc(sizeof(v1->element_size));
+    void *y = malloc(sizeof(v1->element_size));
+    void *z = malloc(sizeof(v1->element_size));
 
     v1->operation->add(v1->x, v2->x, x);
     v1->operation->add(v1->y, v2->y, y);
@@ -79,14 +79,16 @@ myVector *vectorMult(myVector *v1, myVector *v2) {
 
     void *x = malloc(sizeof(v1->element_size)), *y = malloc(sizeof(v1->element_size)), *z = malloc(sizeof(v1->element_size)),
          *k1 = malloc(sizeof(v1->element_size)), *k2 = malloc(sizeof(v1->element_size));
+
     struct operation *op = v1->operation;
+
     op->sub(op->mult(v1->y, v2->z, k1), op->mult(v1->z, v2->y, k2), x);
-
     op->sub(op->mult(v1->z, v2->x, k1), op->mult(v1->x, v2->z, k2), y);
-
     op->sub(op->mult(v1->x, v2->y, k1), op->mult(v1->y, v2->x, k2), z);
+
     free(k1);
     free(k2);
+
     return newVector(x, y, z, v1->element_size, op);
 }
 
